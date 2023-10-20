@@ -9,14 +9,14 @@
 using namespace std;
 
 int main() {
-    clock_t start1, end1, start2, end2, startall, endall;
+    clock_t start1, end1, start2, end2, start_all, end_all;
     srand(time(NULL));
     int n = 0;
     double tmp, d;
     cout << "Enter a matrix size:\n";
     cout << "n = ";
     cin >> n;
-    startall = clock();
+    start_all = clock();
     double** a = new double* [n];
     for (int i = 0; i < n; i++) {
         a[i] = new double[n];
@@ -66,8 +66,8 @@ int main() {
     }
     delete[] a;
     printf("Determinant calculation time = %.10f second(s)\n", (duration2 + duration1));
-    endall = clock();
-    double durationall = ((endall - startall) / (double)CLOCKS_PER_SEC);
+    end_all = clock();
+    double durationall = ((end_all - start_all) / (double)CLOCKS_PER_SEC);
     printf("Total execution time = %.10f second(s) \n", durationall);
     return 0;
 }
